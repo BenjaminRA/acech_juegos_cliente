@@ -1,0 +1,352 @@
+.cuadro-laMemoria {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(26, 93, 99, 0.14), 
+  0 3px 1px -2px rgba(26, 93, 99, 0.2), 
+  0 1px 5px 0 rgba(26, 93, 99, 0.12);
+  border-radius: 5px;
+  height: 60px;
+  width: 200px;
+  background-color: rgba(26, 93, 99, 1);
+  transition: all .2s linear;
+  transform: scale(1.2);
+}
+
+.cuadro-laMemoria-activo {
+  background-color: rgb(243, 91, 104);
+}
+
+.cuadro-laMemoria-correcto {
+  background-color: rgb(0, 190, 178);
+}
+
+.cuadro-laMemoria-mostrarPista {
+  background-color: rgb(216, 30, 91);
+}
+
+@keyframes cuadro-laMemoria-mostrarPista {
+  0% {}
+  25% {background-color: rgb(216, 30, 91)}
+  75% {background-color: rgb(216, 30, 91)}
+  100% {}
+}
+
+.palabra-laMemoria {
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px 10px  #000000;
+  font-size: 28px;
+  line-height: 26px;
+  opacity: 1;
+  transition: all .2s linear;
+  cursor: default !important;
+  user-select: none;
+}
+
+.palabra-laMemoria-inactivo {
+  opacity: 0;
+}
+
+.laMemoria-mostrarPista {
+  animation: laMemoria-mostrarPista 3s ease;
+}
+
+@keyframes laMemoria-mostrarPista {
+  0% {opacity: 0}
+  25% {opacity: 1}
+  75% {opacity: 1}
+  100% {opacity: 0}
+}
+
+@keyframes cuadro-laMemoria-incorrecto {
+  0% {left: 0px}
+  25% {left: -30px}
+  75% {left: 30px}
+  100% {left: 0px}
+}
+
+.cuadro-laMemoria-incorrecto {
+  background-color: rgb(178, 3, 47);
+  position: relative;
+  animation: cuadro-laMemoria-incorrecto .35s ease;
+}
+
+@keyframes cuadro-laMemoria-incorrecto {
+  0% {left: 0px}
+  25% {left: -30px}
+  75% {left: 30px}
+  100% {left: 0px}
+}
+
+.boton-correcto {
+  padding: 15px;
+  margin: 25px;
+  color: white;
+  background-color: rgb(0, 190, 178);
+  box-shadow: 0 2px 2px 0 rgba(0, 190, 178, 0.14), 
+  0 3px 1px -2px rgba(0, 190, 178, 0.2), 
+  0 1px 5px 0 rgba(0, 190, 178, 0.12);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.boton-correcto:hover {
+  padding: 8px;
+  box-shadow: 0 25px 26px -12px rgba(0, 190, 178, 0.42), 
+  0 4px 30px 0px rgba(0, 0, 0, 0.12), 
+  0 8px 25px -5px rgba(0, 190, 178, 0.2)
+}
+
+.boton-incorrecto {
+  padding: 15px;
+  margin: 25px;
+  color: white;
+  background-color: rgb(178, 3, 47);
+  box-shadow: 0 2px 2px 0 rgba(178, 3, 47, 0.14), 
+  0 3px 1px -2px rgba(178, 3, 47, 0.2), 
+  0 1px 5px 0 rgba(178, 3, 47, 0.12);
+  border-radius: 5px;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.boton-jugar {
+  padding: 15px;
+  margin: 25px;
+  color: white;
+  background-color: rgb(0, 190, 178);
+  box-shadow: 0 2px 2px 0 rgba(0, 190, 178, 0.14), 
+  0 3px 1px -2px rgba(0, 190, 178, 0.2), 
+  0 1px 5px 0 rgba(0, 190, 178, 0.12);
+  border-radius: 5px;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+
+.boton-jugar:hover {
+  padding: 8px;
+  box-shadow: 0 25px 26px -12px rgba(0, 190, 178, 0.42), 
+  0 4px 30px 0px rgba(0, 0, 0, 0.12), 
+  0 8px 25px -5px rgba(0, 190, 178, 0.2)
+}
+
+.boton-incorrecto:hover {
+  padding: 8px;
+  box-shadow: 0 25px 26px -12px rgba(178, 3, 47, 0.42), 
+  0 4px 30px 0px rgba(0, 0, 0, 0.12), 
+  0 8px 25px -5px rgba(178, 3, 47, 0.2)
+}
+
+@keyframes enter-animation {
+  from {opacity: 0;}
+  to {opacity: 1}
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  background-color: rgb(26, 93, 99);
+  box-shadow: 0 2px 2px 0 rgba(243, 91, 104, 0.14), 
+  0 3px 1px -2px rgba(243, 91, 104, 0.2), 
+  0 1px 5px 0 rgba(243, 91, 104, 0.12);
+  border-radius: 100%;
+  transition: all 2s ease;
+}
+
+.ticking {
+  animation: ticking infinite 1s ease;
+}
+
+@keyframes ticking {
+  100% {
+    box-shadow: 0 25px 26px -12px rgba(243, 91, 104, 0.42),
+    0 4px 30px 0px rgba(0, 0, 0, 0.12),
+    0 8px 25px -5px rgba(243, 91, 104, 0.2);
+    background-color: rgba(0, 190, 178, 1);
+  }
+}
+
+.ticking-perdiendo {
+  animation: ticking-perdiendo infinite 1s ease;
+}
+
+@keyframes ticking-perdiendo {
+  0% {
+    background-color: rgba(178, 3, 47, 0.5);
+  }
+  100% {
+    box-shadow: 0 25px 26px -12px rgba(243, 91, 104, 0.42),
+    0 4px 30px 0px rgba(0, 0, 0, 0.12),
+    0 8px 25px -5px rgba(243, 91, 104, 0.2);
+    background-color: rgba(178, 3, 47, 1);
+  }
+}
+
+.timer > span {
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px 10px  #000000;
+  text-align: center;
+  font-size: 15vw !important;
+  user-select: none;
+}
+
+.timer-perdio {
+  background-color: rgb(255, 0, 64);
+  animation: timer-perdio infinite 3s ease-in-out;
+}
+
+@keyframes timer-perdio {
+  0% {}
+  50% {background-color: rgba(178, 3, 47, 1)}
+  100% {}
+}
+
+.gano {
+  background-color: rgb(26, 93, 99);
+  animation: gano infinite 3s ease-in-out;
+}
+
+@keyframes gano {
+  0% {}
+  50% {background-color: rgba(0, 190, 178, 1)}
+  100% {}
+}
+
+.controles-laMemoria {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.boton-incorrecto-mobile {
+  position: fixed;
+  z-index: 5;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(178, 3, 47);
+  box-shadow: 0 2px 2px 0 rgba(178, 3, 47, 0.14), 
+  0 3px 1px -2px rgba(178, 3, 47, 0.2), 
+  0 1px 5px 0 rgba(178, 3, 47, 0.12);
+  border-radius: 5px;
+  transition: all .5s ease;
+  cursor: pointer;
+  animation: enter-animation .5s ease-out;
+}
+
+.boton-correcto-mobile {
+  position: fixed;
+  z-index: 5;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(0, 190, 178);
+  box-shadow: 0 2px 2px 0 rgba(0, 190, 178, 0.14), 
+  0 3px 1px -2px rgba(0, 190, 178, 0.2), 
+  0 1px 5px 0 rgba(0, 190, 178, 0.12);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .5s ease;
+  animation: enter-animation .5s ease-out;
+}
+
+.boton-refresh-mobile {
+  position: fixed;
+  z-index: 5;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(243, 91, 104);
+  box-shadow: 0 2px 2px 0 rgba(243, 91, 104, 0.14), 
+  0 3px 1px -2px rgba(243, 91, 104, 0.2), 
+  0 1px 5px 0 rgba(243, 91, 104, 0.12);
+  border-radius: 5px;
+  transition: all .5s ease;
+  cursor: pointer;
+  animation: enter-animation .5s ease-out;
+}
+
+.boton-refresh {
+  padding: 15px;
+  margin: 25px;
+  color: white;
+  background-color: rgb(243, 91, 104);
+  box-shadow: 0 2px 2px 0 rgba(243, 91, 104, 0.14), 
+  0 3px 1px -2px rgba(243, 91, 104, 0.2), 
+  0 1px 5px 0 rgba(243, 91, 104, 0.12);
+  border-radius: 5px;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.boton-refresh:hover {
+  padding: 8px;
+  box-shadow: 0 25px 26px -12px rgba(243, 91, 104, 0.42), 
+  0 4px 30px 0px rgba(0, 0, 0, 0.12), 
+  0 8px 25px -5px rgba(243, 91, 104, 0.2)
+}
+
+.timer-mobile {
+  position: fixed;
+  right: 10px;
+  bottom: 80px;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  color: white;
+  background-color: rgb(0, 190, 178);
+  box-shadow: 0 2px 2px 0 rgba(0, 190, 178, 0.14), 
+  0 3px 1px -2px rgba(0, 190, 178, 0.2), 
+  0 1px 5px 0 rgba(0, 190, 178, 0.12);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .5s ease;
+  animation: enter-animation .5s ease-out;
+  display: flex;
+  align-items: center;
+}
+
+.timer-mobile > span {
+  width: 100%;
+  color: white;
+  text-align: center;
+  user-select: none;
+  font-size: 40px !important;
+}
+
+
+.tema-laMemoria {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(216, 30, 91, 0.14), 
+  0 3px 1px -2px rgba(216, 30, 91, 0.2), 
+  0 1px 5px 0 rgba(216, 30, 91, 0.12);
+  border-radius: 5px;
+  height: 100px;
+  background-color: rgba(216, 30, 91, 1);
+  transition: all .2s ease;
+  cursor: pointer;
+  margin: 15px 5px 5px 15px
+}
+
+.tema-laMemoria:hover {
+  margin: 10px 0px 0px 20px;
+  box-shadow: 0 14px 26px -12px rgba(216, 30, 91, 0.42), 
+  0 4px 23px 0px rgba(0, 0, 0, 0.12), 
+  0 8px 10px -5px rgba(216, 30, 91, 0.2)
+}
+
+.tema-laMemoria-texto {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 3.5vh;
+}
