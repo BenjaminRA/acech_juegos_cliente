@@ -115,12 +115,12 @@ export default connect(mapStateToProps, { changePagina })(class extends React.Co
     return (
       <Grid> 
         <Row>
-          <Sound
+          {/* <Sound
             url={`/assets/SFX/correcto/${this.state.contador}.mp3`}
             volume={20}
             autoLoad={true}
             playStatus={Sound.status.PLAYING}
-          />
+          /> */}  
           <Col xs={12} sm={6} style={{padding: 50}}>
             <Palabras
               palabras={this.state.palabras} 
