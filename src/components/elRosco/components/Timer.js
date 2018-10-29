@@ -60,8 +60,10 @@ export default class extends React.Component {
         style={{
           position: 'absolute',
           height: window.innerHeight/2, width: window.innerHeight/2,
-          left: (window.innerWidth/8.5),
-          top: (window.innerHeight/5.9)
+          left: (window.innerHeight/3)/2,
+          top: (window.innerHeight/6)
+          // left: 0,
+          // top: 0
           }}>
           {(this.props.ticking && !this.props.gano) ? <Timer 
             date={this.state.perdiendo ? (Date.now() + 1000*10) : (Date.now() + 1000*60)}

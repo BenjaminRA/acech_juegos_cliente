@@ -13,8 +13,6 @@ export default class extends React.Component {
     start: false,
   }
 
-  
-
   render() {
     return (
       <div>
@@ -23,13 +21,17 @@ export default class extends React.Component {
             <div key={index} className={classnames(
               'letra-elRosco',
               {'letra-elRosco-correcto': this.state.correctas.includes(letra),
+              'letra-elRosco-activo': this.state.currrentLetra === this.state.letras[index],
               'letra-elRosco-incorrecto': this.state.incorrectas.includes(letra),
               'letra-elRosco-pasada': this.state.pasadas.includes(letra)
             })} style={{
-              left: (window.innerWidth/5) + (window.innerHeight/2.8)*Math.cos((2*Math.PI/this.state.letras.length)*index - Math.PI/2),
-              top: (window.innerHeight/3) + (window.innerHeight/2.8)*Math.sin((2*Math.PI/this.state.letras.length)*index - Math.PI/2),
+              left: (window.innerHeight/2.8 + 20) + (window.innerHeight/2.8)*Math.cos((2*Math.PI/this.state.letras.length)*index - Math.PI/2),
+              top: (window.innerHeight/2.8 + 20) + (window.innerHeight/2.8)*Math.sin((2*Math.PI/this.state.letras.length)*index - Math.PI/2),
+              // left: 0,
+              // top: 0,
               height: window.innerHeight*.08,
-              width: window.innerHeight*.08
+              width: window.innerHeight*.08,
+              marginBottom: 20
             }} onClick={() => this.setState({correctas: !this.state.correctas.includes(letra) ? this.state.correctas.concat(letra) : []})}>
               <p style={{fontSize: window.innerHeight*.05}}>{letra}</p>
             </div>)}
@@ -39,7 +41,9 @@ export default class extends React.Component {
               gano={this.state.gano}
             />
         </div>
-        <Grid>
+        <Grid style={{
+          marginTop: 20
+        }}>
           <Row end="xs">
             <Col xs={6}>
               aqui va la pista
